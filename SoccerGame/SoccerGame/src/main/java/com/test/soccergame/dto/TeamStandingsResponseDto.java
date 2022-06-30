@@ -7,9 +7,9 @@ import lombok.Setter;
 @Setter
 public class TeamStandingsResponseDto {
 
-    private String countryName;
-    private String teamName;
-    private String leagueName;
+    private String country;
+    private String team;
+    private String league;
     private Integer overallLeaguePosition;
     private Integer leagueId;
 }
