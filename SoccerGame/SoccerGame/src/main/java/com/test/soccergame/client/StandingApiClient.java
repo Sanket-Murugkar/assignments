@@ -15,15 +15,15 @@ import org.springframework.web.client.RestTemplate;
 public class StandingApiClient {
     @Autowired
     private RestTemplate restTemplate;
-    @Value("${url}")
+    @Value("${standingApiClientUrl}")
     private String standingApiClientUrl;
 
     public RawResponseData[] loadData(){
         ObjectMapper objectMapper = new ObjectMapper();
         RawResponseData[] rawResponseData;
         try {
-            ResponseEntity<String> response = restTemplate.getForEntity(standingApiClientUrl, String.class);
-            rawResponseData = objectMapper.readValue(response.getBody(), RawResponseData[].class);
+            ResponseEntity<RawResponseData[]> response = restTemplate.getForEntity(standingApiClientUrl, RawResponseData[].class);
+            rawResponseData = response.getBody();
         } catch (Exception e) {
             log.error("Error while invoking standing APi Client",e);
             throw new StandingAPIException();

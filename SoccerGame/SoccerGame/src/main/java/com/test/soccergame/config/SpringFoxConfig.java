@@ -1,4 +1,4 @@
-package com.test.soccergame.client;
+package com.test.soccergame.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

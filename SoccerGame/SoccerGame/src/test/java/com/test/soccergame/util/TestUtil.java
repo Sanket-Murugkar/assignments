@@ -1,6 +1,10 @@
 package com.test.soccergame.util;
 
 import com.test.soccergame.client.response.RawResponseData;
+import com.test.soccergame.entity.TeamStandings;
+
+import java.util.HashSet;
+import java.util.Set;
 
 public class TestUtil {
 
@@ -16,5 +20,15 @@ public class TestUtil {
         rawResponseData1.setLeague_id("555");
         rawResponseData[0]=rawResponseData1;
         return rawResponseData;
+    }
+
+    public static Set<TeamStandings> getTeamStandings(){
+        Set<TeamStandings> standingsHashSet = new HashSet<>();
+        TeamStandings standings = new TeamStandings();
+        standings.setTeamName("testTeam");
+        standings.setLeagueName("testLeague");
+        standings.setCountryName("testCountry");
+        standingsHashSet.add(standings);
+        return standingsHashSet;
     }
 }
